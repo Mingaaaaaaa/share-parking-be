@@ -29,14 +29,23 @@ export class ParkingSlot {
   @Prop({ required: true, type: String })
   proof_image: string;
 
-  @Prop({ required: true, type: String })
-  availableTime: string;
+  @Prop({ type: [String] })
+  timeRange: string[];
+
+  @Prop({ type: [String] })
+  dateRange: string[];
 
   @Prop({ type: Boolean })
   availability: boolean;
 
   @Prop({ enum: ['active', 'inactive'], type: String })
   slot_status: string;
+
+  @Prop({ type: String })
+  start_time: string;
+
+  @Prop({ type: String })
+  end_time: string;
 }
 
 export const ParkingSlotSchema = SchemaFactory.createForClass(ParkingSlot);

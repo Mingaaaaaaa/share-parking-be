@@ -27,6 +27,11 @@ export class OrdersController {
     return this.ordersService.update(id, updateOrderDto);
   }
 
+  @Post('cancel/:id')
+  cancel(@Param('id') id: string) {
+    return this.ordersService.cancelOrder(id);
+  }
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.ordersService.remove(id);

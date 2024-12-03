@@ -5,6 +5,7 @@ export class CreateOrderDto {
     user_id: number;
     slot_id: number;
     name: string;
+    readonly status?: number;
     readonly end_time: Date;
     readonly start_time: Date;
 }

@@ -17,9 +17,17 @@ export class Order {
   @Prop({ required: true, type: String })
   name: string;
 
-  @Prop({ required: true, type: String })
+  @Prop({ type: String })
   availableTime: string;
 
+  @Prop({ required: true, type: Number, default: 0 }) // 0:待使用, 1:使用中, 2:已完成, 3:已取消
+  status: number;
+
+  @Prop({ required: true, type: Date })
+  end_time: Date;
+
+  @Prop({ required: true, type: Date })
+  start_time: Date;
 }
 
 export const OrderSchema = SchemaFactory.createForClass(Order);

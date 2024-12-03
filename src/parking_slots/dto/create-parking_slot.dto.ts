@@ -13,4 +13,6 @@ export class CreateParkingSlotDto {
     readonly new_coordinates: [number, number];
     readonly availability?: boolean;
     readonly slot_status?: string;
+    readonly start_time?: string;
+    readonly end_time?: string;
 }

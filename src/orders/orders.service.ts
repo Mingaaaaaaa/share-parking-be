@@ -63,4 +63,16 @@ export class OrdersService {
       throw error;
     }
   }
+
+  async cancelOrder(id: string): Promise<Order> {
+    try {
+      const objectId = new Types.ObjectId(id);
+      const updatedOrder = await this.orderModel.findByIdAndUpdate(objectId, { status: 3 }, { new: true }).exec();
+      console.log('cancelOrder: order canceled', updatedOrder);
+      return updatedOrder;
+    } catch (error) {
+      console.error('cancelOrder: error', error);
+      throw error;
+    }
+  }
 }
